@@ -1,0 +1,19 @@
+version: '3'
+services:
+  nginx:
+    container_name: container_nginx
+    build: docker/docker-nginx
+    restart: always
+    ports:
+      - 80:80
+    hostname: container_nginx_hostname
+    links:
+      - app
+  app:
+    container_name: container_springboot
+    restart: always
+    build: docker/docker-springboot
+    expose:
+      - 8080
+    command: ./gradlew bootRun
+    hostname: container_springboot_hostname
