@@ -23,7 +23,7 @@
 1. Install dependency for frontend and build front-codes.
   ```
   $ npm install --prefix ./frontend
-  $ npm run build
+  $ npm run build --prefix ./frontend
   ```
 2. Build serverside code
   ```
