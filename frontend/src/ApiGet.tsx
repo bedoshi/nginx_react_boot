@@ -1,5 +1,7 @@
 import axios from 'axios';
- 
+
+axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
+
 export const ApiGet = (URL:string):void => {
   axios
     .get(URL)
