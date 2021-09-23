@@ -2,7 +2,8 @@ version: '3'
 services:
   nginx:
     container_name: container_nginx
-    build: docker/docker-nginx
+    build:
+      context: ./docker/docker-nginx
     restart: always
     ports:
       - 80:80
@@ -14,11 +15,18 @@ services:
   app:
     container_name: container_springboot
     restart: always
-    build: docker/docker-springboot
+    user: $UID:$GID
+    build:
+      context: ./docker/docker-springboot
+      args:
+        UID: $UID
+        GID: $GID
+        UNAME: $UNAME
     expose:
       - 8080
     hostname: container_springboot_hostname
+    working_dir: '/home/$UNAME'
     volumes:
-      - ./serverside:/serverside
+      - ./serverside:/home/$UNAME/serverside
     command: ./serverside/gradlew bootRun
     hostname: container_springboot_hostname

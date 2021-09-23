@@ -5,3 +5,14 @@
 
 nginx: listen 80 -> ./frontend 配下の react app
 react app -> sprint_boot_app:8080 でapiをコールする
+
+## How to run this ?
+1. Run below command, and confirm `.env` file in `docker/docker-springboot`.
+  This is parameter file for dockerfile in `docker/docker-springboot`.
+  ```
+  $ ./docker/docker-springboot/setDotEnv.sh
+  ```
+1. Run below command
+  ```
+  $ docker compose up -d 
+  ```
