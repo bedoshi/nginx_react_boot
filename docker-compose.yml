@@ -27,8 +27,8 @@ services:
     ports:
       - 8080:8080
     hostname: container_springboot_hostname
-    working_dir: '/home/$UNAME'
     volumes:
-      - ./serverside:/home/$UNAME/serverside
-    command: ./serverside/gradlew bootRun
+      - ./serverside:/serverside
+    working_dir: '/serverside'
+    command: ./gradlew bootRun
     hostname: container_springboot_hostname
