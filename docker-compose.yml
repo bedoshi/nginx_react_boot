@@ -7,6 +7,8 @@ services:
     ports:
       - 80:80
     hostname: container_nginx_hostname
+    volumes:
+      - ./frontend/build:/usr/share/nginx/html
     links:
       - app
   app:
@@ -15,5 +17,8 @@ services:
     build: docker/docker-springboot
     expose:
       - 8080
-    command: ./gradlew bootRun
+    hostname: container_springboot_hostname
+    volumes:
+      - ./serverside:/serverside
+    command: ./serverside/gradlew bootRun
     hostname: container_springboot_hostname
