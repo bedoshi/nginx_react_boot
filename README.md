@@ -4,6 +4,9 @@
 構成としては以下の通り。
 - nginx: listen 80 -> ./frontend 配下の react app
 - react app -> sprint_boot_app:8080 でapiをコールする
+
+![image](./etc/img/image.png)
+
 ## 何検証してんの？
 フロントからサーバサイドのAPIをコールしたときにCORSで403になるらしい。多分なるやろな。
 ということで以下を確認することが目的。
