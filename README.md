@@ -14,5 +14,6 @@ react app -> sprint_boot_app:8080 でapiをコールする
   ```
 1. Run below command
   ```
-  $ docker compose up -d 
+  $ docker-compose build
+  $ docker-compose up -d
   ```
