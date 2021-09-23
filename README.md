@@ -8,8 +8,10 @@ react app -> sprint_boot_app:8080 でapiをコールする
 
 ## 検証状況
 - `http://localhost:8080` でレスポンスが取れるのを確認
-- `http://localhost` で画面の表示を確認。
-  - 一方でAPIの呼び出しには `strict-origin-when-cross-origin` がついているっぽい？
+- `http://localhost` で画面の表示を確認。
+  - 一方でAPIの呼び出しには CORS で403が返ってくる。ので、なんか対策してみる
+    - header に全てのサイトへの許可するようにパラメータを設定した => だめだった
+    - Controller側に `@CrossOrigin` アノテーションを付与してみた => だめだった
 
 ## How to run this ?
 1. Install dependency for frontend and build front-codes.
