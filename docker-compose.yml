@@ -15,13 +15,8 @@ services:
   app:
     container_name: container_springboot
     restart: always
-    user: $UID:$GID
     build:
       context: ./docker/docker-springboot
-      args:
-        UID: $UID
-        GID: $GID
-        UNAME: $UNAME
     expose:
       - 8080
     ports:
