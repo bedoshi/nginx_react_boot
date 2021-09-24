@@ -33,6 +33,8 @@
   - 一方でAPIの呼び出しには CORS で403が返ってくる。ので、なんか対策してみる
     - header に全てのサイトへの許可するようにパラメータを設定した => だめだった
     - Controller側に `@CrossOrigin` アノテーションを付与してみた => だめだった
+    - これを削除した　=>　いけた。
+    >header に全てのサイトへの許可するようにパラメータを設定した => だめだった
 
 ## How to run this ?
 1. Install dependency for frontend and build front-codes.
