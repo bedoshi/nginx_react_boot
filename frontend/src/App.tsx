@@ -18,7 +18,7 @@ function App() {
         </a>
       </header>
       {
-        ApiGet("http://localhost:8080/api")
+        ApiGet("http://esterfreesia.com:8080/api")
       }
     </div>
   );
